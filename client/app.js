@@ -1,3 +1,6 @@
-import { add } from "./utils";
+import add from "./utils";
+import moment from "moment";
+import importedFile from "./newFile";
+import { otherValue2 } from "./newFile";
 
-console.log(add(1, 1));
+console.log(moment().format("MMMM Do YYYY, h:mm:ss a"));
