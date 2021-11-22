@@ -1,6 +1,14 @@
-import add from "./utils";
-import moment from "moment";
-import importedFile from "./newFile";
-import { otherValue2 } from "./newFile";
+const loadPokemon = async (name) => {
+  let result = await window.fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+  let json = await result.json();
+  let imgUrl = json.sprites.front_default;
 
-console.log(moment().format("MMMM Do YYYY, h:mm:ss a"));
+  let imgElement = document.createElement("img");
+  imgElement.src = imgUrl;
+  imgElement.style.backgroundColor = "red";
+  document.body.appendChild(imgElement);
+  console.log("All done");
+};
+
+console.log("Page loaded, about to get jigglypuff");
+loadPokemon("jigglypuff");
